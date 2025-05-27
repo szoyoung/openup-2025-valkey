@@ -1,0 +1,5 @@
+#define REDIS_GIT_SHA1 "4dc28832"
+#define REDIS_GIT_DIRTY "      23"
+#define REDIS_BUILD_ID "gimseoyeong-ui-MacBookAir.local-1748315785"
+#include "version.h"
+#define REDIS_BUILD_ID_RAW SERVER_NAME VALKEY_VERSION REDIS_BUILD_ID REDIS_GIT_DIRTY REDIS_GIT_SHA1

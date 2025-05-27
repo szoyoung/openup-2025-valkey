@@ -4698,7 +4698,17 @@ void echoCommand(client *c) {
 }
 
 void echoSeoyoungCommand(client *c) {
-    addReplyBulk(c, c->argv[1]);
+
+    //인자 개수 검사
+    if (c->argc != 2) {
+        addReplyError(c, "ERR wrong number of arguments for 'echoSeoyoung' command");
+        return;
+    }
+    //입력 문자열 가져오기 
+    char *input = c->argv[1]->ptr;
+
+    sds resp = sdscatfmt(sdsempty(), "echoSeoyoung_%s", input);
+    addReplyBulkSds(c, resp);
 }
 
 void timeCommand(client *c) {
